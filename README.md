@@ -21,7 +21,7 @@ valuable teammate. Let's go find out.
 - [Node.js](https://nodejs.org/) 18+ (to run `sample-app/`)
 - A GitHub account with an active Copilot subscription
 - The [`gh` CLI](https://cli.github.com/), authenticated (`gh auth status`) —
-  used by the Day 5 issue-triage automation
+  used by `/delegate` (Day 4) and the GitHub Copilot App automation (Day 5)
 
 ## How This Repo Is Organized
 ```
@@ -31,9 +31,10 @@ copilot-cli-lab/
   lab-00-setup/                    Day 1: install & auth the Copilot CLI, run the web app
   lab-01-global-instructions/      Day 2: install global instructions & global skills
   lab-02-local-skills/             Day 3: explore the pre-built project-local skills
-  lab-03-cost-saving-workflow/     Day 4: /research, /plan, /fleet, /rubberduck,
-                                    /chronicle, /create-skill, /handoff, /new, /compact - cost-saving focus
-  lab-04-daily-automations/        Day 5: /chronicle cost-tip template + 9am issue triage
+  lab-03-cost-saving-workflow/     Day 4: /research, /plan, /fleet, /rubberduck, /context,
+                                    /chronicle, /create-skill, /handoff, /delegate, /new, /compact -
+                                    ship a visible feature + fix a bug, cost-saving focus
+  lab-04-daily-automations/        Day 5: dumb-simple /every token-usage check + app-template automation
   lab-05-slides-with-pptx/         Day 6: build your own deck with the pptx skill
   lab-06-billing-budgeting/        Bonus: billing & budget optimization
   slides/                          the deck this lab itself ships with
@@ -52,3 +53,22 @@ cat ../lab-00-setup/README.md
 ```
 
 Ready? Head to [`lab-00-setup/README.md`](./lab-00-setup/README.md) to kick off Day 1.
+
+## Lab Agenda & Timing
+Rough per-lab timing — plan for **~2 to 2.5 hours** solo, or **~3 to 3.5
+hours** as a facilitated workshop with discussion between labs.
+
+| Lab | Focus | Time |
+|---|---|---|
+| `lab-00-setup` | Install, auth, first prompts, run the web app | 10–15 min |
+| `lab-01-global-instructions` | Global instructions & global skills (kept lean!) | 15–20 min |
+| `lab-02-local-skills` | Explore & extend project-local skills | 15–20 min |
+| `lab-03-cost-saving-workflow` | Ship a visible feature + fix a bug, six cost-saving habits | 40–50 min |
+| `lab-04-daily-automations` | Simple `/every` token-usage check + app-template automation | 15–20 min |
+| `lab-05-slides-with-pptx` | Build your own deck with the pptx skill | 20–30 min |
+| `lab-06-billing-budgeting` (bonus) | Billing & budget optimization | 10–15 min |
+
+💡 A recurring theme worth calling out live: keep **global** instructions
+as lean as possible (see `lab-01`) — they're resent on every turn, in every
+project, forever, so every extra line is a permanent token cost. Push
+anything project-specific into a local skill instead (`lab-02`).

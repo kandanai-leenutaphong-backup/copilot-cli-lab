@@ -34,24 +34,46 @@ sample-app/
    Read `.github/copilot-instructions.md` and `.github/skills/duplicate-task-checker/SKILL.md`
    directly too — these are plain Markdown, no magic.
 
-2. **See it in action.** Ask Copilot to review the codebase and watch the
-   local skill kick in:
+   **What to expect:** `/skills list` shows `duplicate-task-checker` and
+   `standup-recap` tagged as project-local (scoped to `sample-app/`), plus
+   `handoff` and `create-copilot-skills` tagged as global (from Day 2) if
+   you installed those. `/skills info <name>` prints the skill's
+   description and the full `SKILL.md` body — no need to open the file
+   yourself to see what it does.
+
+2. **Use a skill directly.** Skills aren't invoked with their own slash
+   command — Copilot decides to apply a skill automatically when your
+   prompt matches its `description`. Trigger it on purpose:
+   ```
+   > Use the standup-recap skill to draft today's update from tasks.json.
+   ```
+   **What to expect:** the response follows the skill's exact structure —
+   **Finished / In progress / Blocked** sections, one sentence per bullet,
+   no corporate jargon — because that structure lives in the skill file,
+   not in your prompt. Ask the same thing in a *different* project (no
+   `standup-recap` skill installed) and compare: you'll get a generic,
+   differently-shaped answer.
+
+3. **See it in action passively too.** Ask Copilot to review the codebase and
+   watch the local skill kick in without being named:
    ```
    > Review src/index.js for any bugs related to task ids.
    ```
-   Notice how it reasons using the `task-id-guard` rules, not just general
-   JavaScript knowledge.
+   Notice how it reasons using the `duplicate-task-checker` rules, not just
+   general JavaScript knowledge. **What to expect:** it should explicitly
+   flag the `tasks.length + 1` id-generation pattern as unsafe — that's the
+   skill's rule #1 showing up in the reasoning, unprompted.
 
-3. **Extend a skill.** Add one more rule to `duplicate-task-checker/SKILL.md`
+4. **Extend a skill.** Add one more rule to `duplicate-task-checker/SKILL.md`
    (or `copilot-instructions.md`) that reflects something your team actually
    cares about — e.g. "always add a regression test alongside a bug fix."
 
-4. **Compare local vs. global.** Open a Copilot CLI session in a *different*
+5. **Compare local vs. global.** Open a Copilot CLI session in a *different*
    scratch folder (outside `copilot-cli-lab/`) and confirm `duplicate-task-checker`
    and `standup-recap` do **not** apply there — only the global
    skill/instructions from Day 2 do.
 
-5. **Combine them.** Back in `sample-app/`, ask Copilot to review `src/index.js`
+6. **Combine them.** Back in `sample-app/`, ask Copilot to review `src/index.js`
    and see both the global house rules *and* the local project rules show up
    in its reasoning/suggestions.
 
@@ -60,5 +82,6 @@ Ask Copilot: *"Given the duplicate-task-checker rule, do you see any existing
 bugs in this codebase?"* — see if it spots the Day 4 mystery early!
 
 ## What's Next
-Day 4: put these skills to work fixing a real bug — and learn to do it in a
-cost-saving way → [`lab-03-cost-saving-workflow`](../lab-03-cost-saving-workflow/README.md)
+Day 4: put these skills to work shipping a real, visible feature — and
+fixing a real bug on the side — in a cost-saving way →
+[`lab-03-cost-saving-workflow`](../lab-03-cost-saving-workflow/README.md)

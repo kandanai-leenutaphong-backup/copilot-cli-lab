@@ -37,7 +37,8 @@ you're in.
 
 3. **Verify it's picked up.** Open a Copilot CLI session in `sample-app/` and
    ask it to draft a commit message for a hypothetical change. Confirm it
-   follows the conventional-commit rule from the template.
+   follows the conventional-commit rule, and that its response ends with
+   "by mewpilot" — both come from the template you just installed.
 
 4. **Try the installed skills:**
    ```
@@ -53,8 +54,14 @@ you're in.
 
 ## 🎉 Try It: Fun Checkpoint
 Add a house rule that's a little silly (e.g., "always end explanations with
-a pun about cats"). Confirm Copilot actually follows it — then decide as a
-team whether to keep it!
+a pun about cats"). Confirm Copilot actually follows it — then remove it
+again afterwards (see below for why).
+
+## 💡 Why So Few Rules?
+Notice the template only has **two** lines. Global instructions are resent
+on every single turn, in every project, forever — so keep this file as lean
+as possible and push anything project-specific down into a local skill
+instead (Day 3). Fewer global rules = less recurring token cost.
 
 ## What's Next
 Day 3: the team realizes some rules only make sense for *this* project, not

@@ -159,7 +159,7 @@ async function build() {
   // ---------------------------------------------------------------
   // Helper for "Day N" lab slides (dark, icon-forward, minimal words)
   // ---------------------------------------------------------------
-  async function addDaySlide({ dayLabel, title, beat, tryIt, iconKey }) {
+  async function addDaySlide({ dayLabel, title, beat, tryIt, iconKey, notes }) {
     const slide = pres.addSlide();
     slide.background = { color: NAVY };
     slide.addShape("ellipse", { x: 8.6, y: 4.3, w: 2.6, h: 2.6, fill: { color: CORAL, transparency: 84 } });
@@ -180,6 +180,9 @@ async function build() {
       { text: tryIt, options: { color: "FFFFFF" } },
     ], { x: 0.6, y: 3.75, w: 8.8, h: 1.0, fontSize: 14, fontFace: "Calibri", margin: 0 });
     addFooter(slide, "copilot-cli-lab · " + dayLabel.toLowerCase(), true);
+    if (notes) {
+      slide.addNotes(notes);
+    }
   }
 
   await addDaySlide({
@@ -193,9 +196,10 @@ async function build() {
   await addDaySlide({
     dayLabel: "DAY 2 · GLOBAL",
     title: "Setting the House Rules",
-    beat: "Everyone was getting different answers. Time to set house rules that apply on every project, on any laptop.",
-    tryIt: "Add a global instruction, then a global skill - and prove it works outside this repo too.",
+    beat: "Everyone was getting different answers. Time to set two lean house rules that apply on every project, on any laptop - and nothing more.",
+    tryIt: "Install the template, then confirm every response ends with \"by mewpilot\".",
     iconKey: "globe",
+    notes: "Speaker note: keep global instructions VERY lean to optimize token usage - they are resent on every single turn, in every project, forever, so every extra line is a permanent, repeating cost. Two rules (commit convention + sign-off) is deliberately the whole file. Anything project-specific belongs in a local skill (Day 3) instead.",
   });
 
   await addDaySlide({
@@ -209,16 +213,16 @@ async function build() {
   await addDaySlide({
     dayLabel: "DAY 4 · COST-SAVING",
     title: "Working Smart, Not Expensive",
-    beat: "Nine slash commands, one real bug, five cost-saving habits - research, plan, and parallelize before you spend a single token.",
-    tryIt: "Fix the duplicate task-id bug, then count how many sessions it would've taken without these habits.",
+    beat: "A visible new feature, one lingering bug, six cost-saving habits - research, plan, and parallelize before you spend a single token.",
+    tryIt: "Ship color-coded priority badges, fix the duplicate task-id bug, then watch /context and /usage prove the savings.",
     iconKey: "coins",
   });
 
   await addDaySlide({
     dayLabel: "DAY 5 · AUTOMATE",
     title: "Automating the Busywork",
-    beat: "A /chronicle cost-tip template plus a 9am scheduled issue triage (/every) - the team's morning report writes itself.",
-    tryIt: "Schedule the 9am triage prompt, then watch a fresh chronicle appear before your first coffee.",
+    beat: "Start dumb-simple: one /every prompt that reports token usage daily. Then level up with a ready-made GitHub Copilot App template.",
+    tryIt: "Schedule the one-line token-usage check, then browse the Copilot App's automation templates for the real morning report.",
     iconKey: "calendar",
   });
 

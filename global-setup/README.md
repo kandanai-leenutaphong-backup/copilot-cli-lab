@@ -44,9 +44,19 @@ global-setup/
   re-explain. Directly reused in `lab-03-cost-saving-workflow`.
 - **`create-copilot-skills`** — the meta-skill: a reference guide Copilot
   uses to scaffold *new* skills correctly (skill locations, `SKILL.md`
-  format, frontmatter fields). This is exactly how `task-id-guard` and
-  `release-notes-writer` in `sample-app/.github/skills/` were built —
+  format, frontmatter fields). This is exactly how `duplicate-task-checker`
+  and `standup-recap` in `sample-app/.github/skills/` were built —
   install it so your team can build their own local skills the same way.
+
+## Keep Global Instructions Lean
+
+`global-instructions.template.md` is intentionally tiny: one commit-message
+rule and one sign-off rule. Global instructions are resent on **every turn
+of every session in every project**, so every extra line is a permanent,
+repeating token cost — unlike a project-local skill, which only loads when
+that project is open. When you extend this file, ask "does this need to
+apply everywhere, forever?" before adding a line. If not, it belongs in a
+project-local skill (see `lab-02-local-skills`) instead.
 
 See [`lab-01-global-instructions/README.md`](../lab-01-global-instructions/README.md)
 for the guided walkthrough that uses these files.
