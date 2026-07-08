@@ -11,10 +11,13 @@ a feature or fixing a bug.*
 Build a real, **visible** feature — priority levels for tasks, shown as
 color-coded badges in `sample-app/web-app` (and a `--priority` flag on the
 CLI) — and fix the duplicate-id bug alongside it, while learning six
-cost-saving habits: **research before you guess, plan before you spend,
+cost-saving habits (**research before you guess, plan before you spend,
 parallelize instead of repeating yourself, sanity-check before you ship,
 build reusable skills instead of reusable prompts, and manage your context
-window on purpose.**
+window on purpose**) plus three tool-choice habits that save tokens no
+matter what you're building (**prefer `grep`/`glob` over raw `bash`,
+reference files instead of pasting them, and delegate heavy exploration to
+subagents**).
 
 ## Check Your Starting Point
 ```
@@ -173,6 +176,80 @@ Once the feature and the fix both look good locally:
 and opens the pull request for you — no need to keep a local session open
 (and paying for its context) while it wraps up.
 
+## Bonus Round: Tool-Choice Habits That Also Save Tokens
+The six habits above are about *when* you call Copilot. These three are
+about *how* Copilot searches and reads — just as easy to get wrong, and just
+as costly when you do.
+
+### 9. Prefer `grep`/`glob` over `bash cat`/`find`/`rg`
+Try the same request two ways and compare:
+```
+> Find every file in sample-app that mentions "priority" and show me the
+> matching lines.
+```
+Watch what Copilot reaches for. If it drops into a raw `bash` command like
+`find . | xargs cat` or `rg -n priority .`, the *entire* raw output — every
+line of every matched file — gets dumped into context, whether or not you
+needed it. Now nudge it explicitly:
+```
+> Use grep to find "priority" across sample-app, and glob to find its test
+> files. Don't use bash for this.
+```
+The built-in `grep`/`glob` tools return structured, minimal matches instead
+of raw terminal output — same answer, far fewer tokens.
+
+💰 **Cost tip:** make the nudge permanent instead of repeating it every
+session. Add one line to `sample-app/.github/copilot-instructions.md`:
+```
+Prefer built-in view/grep/glob tools over bash cat/find/rg for file
+discovery and reading.
+```
+Add it now, start a fresh prompt asking Copilot to "find every place
+`tasks.json` is read from", and confirm it reaches for `grep`/`glob` this
+time without you having to ask.
+
+### 10. Reference files by path — don't paste blobs into the chat
+Try this once, so you can feel the difference:
+```
+> Here's my tasks.json: [paste the entire file contents into the chat]
+> Summarize what's in it.
+```
+Then run `/context` and note the number. Now start a fresh session and ask
+the same question the cheap way:
+```
+> Read tasks.json and summarize what's in it.
+```
+Run `/context` again. A pasted blob gets re-sent in full on *every*
+subsequent turn of the session — a 50K-character paste early on can quietly
+dominate your context budget for the rest of the conversation. A file
+reference costs one `view` call, once.
+
+💰 **Cost tip:** this matters most for big files — logs, data dumps,
+`tasks.json` once it has hundreds of entries. Point Copilot at the path
+(or attach the file) instead of copying its contents into your prompt.
+
+### 11. Delegate heavy exploration to subagents
+For any research question that needs "look at this file, now look at that
+one, now compare" more than a handful of times, don't run the whole
+investigation in your main session. Reuse `/fleet` from Step 3, but for
+*exploration* instead of implementation:
+```
+/fleet
+> Investigate three things in parallel: (1) how tasks.json's shape would
+> need to change for the priority feature, (2) how the CLI currently
+> parses arguments in src/index.js, (3) how web-app/server.js currently
+> renders the task list. Report back a short summary of each, not the raw
+> file contents.
+```
+Each subagent explores in its *own* context window and only its summary
+comes back to yours — your main session stays lean even though three deep
+investigations just happened.
+
+💰 **Cost tip:** this is most valuable in long research sessions (50+
+turns of "now check this too") — every finding an unsupervised main session
+accumulates stays in context for the rest of the conversation. A subagent's
+full trail never does; only the summary does.
+
 ## Verify — and see the fix live
 ```
 npm test
@@ -190,7 +267,9 @@ today's habits.
 Before running `/rubberduck`, guess out loud what hole it'll poke in your
 plan. Then estimate: how many separate sessions would this have taken
 *without* `/fleet`, `/compact`, `/handoff`, and skills? Compare your guess to
-the real `/context` and `/usage` numbers you captured above.
+the real `/context` and `/usage` numbers you captured above. Then check your
+own bash-vs-grep/glob habits from this lab — were you reaching for `bash cat`
+or `find` anywhere you could have used `grep`/`glob` instead?
 
 ## What's Next
 Day 5: automate the boring stuff — including a daily cost-tip habit —

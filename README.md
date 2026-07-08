@@ -32,8 +32,9 @@ copilot-cli-lab/
   lab-01-global-instructions/      Day 2: install global instructions & global skills
   lab-02-local-skills/             Day 3: explore the pre-built project-local skills
   lab-03-cost-saving-workflow/     Day 4: /research, /plan, /fleet, /rubberduck, /context,
-                                    /chronicle, /create-skill, /handoff, /delegate, /new, /compact -
-                                    ship a visible feature + fix a bug, cost-saving focus
+                                    /chronicle, /create-skill, /handoff, /delegate, /new, /compact,
+                                    grep/glob-over-bash, file-refs-not-pastes - ship a visible
+                                    feature + fix a bug, cost-saving focus
   lab-04-daily-automations/        Day 5: dumb-simple /every token-usage check + app-template automation
   lab-05-slides-with-pptx/         Day 6: build your own deck with the pptx skill
   lab-06-billing-budgeting/        Bonus: billing & budget optimization
@@ -55,15 +56,15 @@ cat ../lab-00-setup/README.md
 Ready? Head to [`lab-00-setup/README.md`](./lab-00-setup/README.md) to kick off Day 1.
 
 ## Lab Agenda & Timing
-Rough per-lab timing — plan for **~2 to 2.5 hours** solo, or **~3 to 3.5
-hours** as a facilitated workshop with discussion between labs.
+Rough per-lab timing — plan for **~2.25 to 2.75 hours** solo, or **~3.25 to
+3.75 hours** as a facilitated workshop with discussion between labs.
 
 | Lab | Focus | Time |
 |---|---|---|
 | `lab-00-setup` | Install, auth, first prompts, run the web app | 10–15 min |
 | `lab-01-global-instructions` | Global instructions & global skills (kept lean!) | 15–20 min |
 | `lab-02-local-skills` | Explore & extend project-local skills | 15–20 min |
-| `lab-03-cost-saving-workflow` | Ship a visible feature + fix a bug, six cost-saving habits | 40–50 min |
+| `lab-03-cost-saving-workflow` | Ship a visible feature + fix a bug, six cost-saving habits + three tool-choice habits | 50–65 min |
 | `lab-04-daily-automations` | Simple `/every` token-usage check + app-template automation | 15–20 min |
 | `lab-05-slides-with-pptx` | Build your own deck with the pptx skill | 20–30 min |
 | `lab-06-billing-budgeting` (bonus) | Billing & budget optimization | 10–15 min |

@@ -213,7 +213,7 @@ async function build() {
   await addDaySlide({
     dayLabel: "DAY 4 · COST-SAVING",
     title: "Working Smart, Not Expensive",
-    beat: "A visible new feature, one lingering bug, six cost-saving habits - research, plan, and parallelize before you spend a single token.",
+    beat: "A visible new feature, one lingering bug, six cost-saving habits, plus three tool-choice habits: grep/glob over bash, file refs not pastes, subagents for exploration.",
     tryIt: "Ship color-coded priority badges, fix the duplicate task-id bug, then watch /context and /usage prove the savings.",
     iconKey: "coins",
   });
