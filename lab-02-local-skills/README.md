@@ -18,8 +18,8 @@ sample-app/
   .github/
     copilot-instructions.md          # project-wide instructions
     skills/
-      task-id-guard/SKILL.md         # flags duplicate task-id bugs
-      release-notes-writer/SKILL.md  # drafts release notes in the team's voice
+      duplicate-task-checker/SKILL.md   # flags duplicate task-id bugs
+      standup-recap/SKILL.md            # drafts a standup update from tasks.json (no git needed)
 ```
 
 ## Steps
@@ -29,9 +29,9 @@ sample-app/
    cd ../sample-app
    copilot
    /skills list
-   /skills info task-id-guard
+   /skills info duplicate-task-checker
    ```
-   Read `.github/copilot-instructions.md` and `.github/skills/task-id-guard/SKILL.md`
+   Read `.github/copilot-instructions.md` and `.github/skills/duplicate-task-checker/SKILL.md`
    directly too — these are plain Markdown, no magic.
 
 2. **See it in action.** Ask Copilot to review the codebase and watch the
@@ -42,13 +42,13 @@ sample-app/
    Notice how it reasons using the `task-id-guard` rules, not just general
    JavaScript knowledge.
 
-3. **Extend a skill.** Add one more rule to `task-id-guard/SKILL.md` (or
-   `copilot-instructions.md`) that reflects something your team actually
+3. **Extend a skill.** Add one more rule to `duplicate-task-checker/SKILL.md`
+   (or `copilot-instructions.md`) that reflects something your team actually
    cares about — e.g. "always add a regression test alongside a bug fix."
 
 4. **Compare local vs. global.** Open a Copilot CLI session in a *different*
-   scratch folder (outside `copilot-cli-lab/`) and confirm `task-id-guard`
-   and `release-notes-writer` do **not** apply there — only the global
+   scratch folder (outside `copilot-cli-lab/`) and confirm `duplicate-task-checker`
+   and `standup-recap` do **not** apply there — only the global
    skill/instructions from Day 2 do.
 
 5. **Combine them.** Back in `sample-app/`, ask Copilot to review `src/index.js`
@@ -56,8 +56,8 @@ sample-app/
    in its reasoning/suggestions.
 
 ## 🎉 Try It: Fun Checkpoint
-Ask Copilot: *"Given the task-id-guard rule, do you see any existing bugs in
-this codebase?"* — see if it spots the Day 4 mystery early!
+Ask Copilot: *"Given the duplicate-task-checker rule, do you see any existing
+bugs in this codebase?"* — see if it spots the Day 4 mystery early!
 
 ## What's Next
 Day 4: put these skills to work fixing a real bug — and learn to do it in a

@@ -202,14 +202,14 @@ async function build() {
     dayLabel: "DAY 3 · LOCAL",
     title: "Project-Local Skills",
     beat: "This codebase has its own quirks global rules don't cover - and real local skills are already set up. Day 3 is about exploring them.",
-    tryIt: "Ask Copilot to review the code and watch the pre-built task-id-guard skill kick in.",
+    tryIt: "Ask Copilot to review the code and watch the pre-built duplicate-task-checker skill kick in.",
     iconKey: "folder",
   });
 
   await addDaySlide({
     dayLabel: "DAY 4 · COST-SAVING",
     title: "Working Smart, Not Expensive",
-    beat: "Nine slash commands, one real bug, five cost-saving habits - plan, research, and parallelize before you spend a single token.",
+    beat: "Nine slash commands, one real bug, five cost-saving habits - research, plan, and parallelize before you spend a single token.",
     tryIt: "Fix the duplicate task-id bug, then count how many sessions it would've taken without these habits.",
     iconKey: "coins",
   });
@@ -217,7 +217,7 @@ async function build() {
   await addDaySlide({
     dayLabel: "DAY 5 · AUTOMATE",
     title: "Automating the Busywork",
-    beat: "A /chronicles cost-tip template plus a 9am scheduled issue triage (/every) - the team's morning report writes itself.",
+    beat: "A /chronicle cost-tip template plus a 9am scheduled issue triage (/every) - the team's morning report writes itself.",
     tryIt: "Schedule the 9am triage prompt, then watch a fresh chronicle appear before your first coffee.",
     iconKey: "calendar",
   });

@@ -1,10 +1,10 @@
 ---
-name: task-id-guard
+name: duplicate-task-checker
 description: Use when reviewing or editing sample-app code that creates, assigns, or reassigns task ids in mewpilot-tasks. Flags any logic that could produce duplicate ids (e.g. deriving ids from array length or index instead of a stable counter).
 license: MIT
 ---
 
-# Task Id Guard
+# Duplicate Task Checker
 
 `sample-app` (Team Mewpilot's task tracker) has one hard rule: **task ids
 must always be unique**, even after tasks are removed and re-added.

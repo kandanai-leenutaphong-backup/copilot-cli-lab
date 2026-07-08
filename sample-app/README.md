@@ -36,8 +36,10 @@ a failing test that reproduces it. You'll meet this bug again in
 
 ## Project-level Copilot setup
 This repo already ships real Copilot CLI configuration — see
-`.github/copilot-instructions.md` and `.github/skills/` (`task-id-guard`,
-`release-notes-writer`). Explored in `lab-02-local-skills`.
+`.github/copilot-instructions.md` and `.github/skills/` (`duplicate-task-checker`,
+`standup-recap`). Neither skill needs git — both work straight off the app's
+own `tasks.json`, which keeps this beginner-friendly. Explored in
+`lab-02-local-skills`.
 
 This app is the shared codebase for every lab in `copilot-cli-lab/`. Don't
 "fix" the id bug before you're told to — future labs depend on it being in

@@ -31,9 +31,9 @@ copilot-cli-lab/
   lab-00-setup/                    Day 1: install & auth the Copilot CLI, run the web app
   lab-01-global-instructions/      Day 2: install global instructions & global skills
   lab-02-local-skills/             Day 3: explore the pre-built project-local skills
-  lab-03-cost-saving-workflow/     Day 4: /plan, /research, /fleet, /rubberduck, /chronicles,
-                                    /create-skill, /handoff, /new, /compact - cost-saving focus
-  lab-04-daily-automations/        Day 5: /chronicles cost-tip template + 9am issue triage
+  lab-03-cost-saving-workflow/     Day 4: /research, /plan, /fleet, /rubberduck,
+                                    /chronicle, /create-skill, /handoff, /new, /compact - cost-saving focus
+  lab-04-daily-automations/        Day 5: /chronicle cost-tip template + 9am issue triage
   lab-05-slides-with-pptx/         Day 6: build your own deck with the pptx skill
   lab-06-billing-budgeting/        Bonus: billing & budget optimization
   slides/                          the deck this lab itself ships with

@@ -7,7 +7,7 @@ while it's at it?"*
 
 ## Objective
 Set up two lightweight daily automations:
-1. A **`/chronicles` cost-tip template** that turns session wrap-ups into a
+1. A **`/chronicle cost-tips` template** that turns session wrap-ups into a
    consistent, shareable log.
 2. A **9am scheduled issue-triage automation** (`/every`) that pulls real
    data from GitHub and drafts today's chronicle for you — before the team's
@@ -17,19 +17,30 @@ Set up two lightweight daily automations:
 ```
 lab-04-daily-automations/
   templates/
-    chronicles-cost-tip.md      # the /chronicles output template
+    chronicles-cost-tip.md      # the daily chronicle output template
     daily-triage-prompt.md      # the prompt text to schedule with /every
 ```
 
 ## Steps
 
-### 1. Try the chronicle template manually first
+### 1. Try the real chronicle commands manually first
 ```
 cd ../sample-app
 copilot
-/chronicles
+/chronicle standup
+```
+Then:
+```
+/chronicle cost-tips
+```
+These are the real, built-in Copilot CLI commands — `standup` reports on
+your last day of work, `cost-tips` gives personalized tips to reduce token
+usage based on your actual usage patterns. Now combine both into one
+consistent shape:
+```
 > Summarize today's work using the template at
-> ../lab-04-daily-automations/templates/chronicles-cost-tip.md
+> ../lab-04-daily-automations/templates/chronicles-cost-tip.md, folding in
+> what /chronicle standup and /chronicle cost-tips just told you.
 ```
 Notice how the template keeps every chronicle in the same shape — easy to
 skim, easy to compare day over day.
