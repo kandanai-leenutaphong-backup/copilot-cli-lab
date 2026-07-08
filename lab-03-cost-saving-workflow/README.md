@@ -36,6 +36,31 @@ Note the token count before you start. You'll check this again later.
 
 ## Steps — six habits, each with a cost tip
 
+### 0. Divide and conquer across three terminals
+Before diving in, set this up as **three separate terminal sessions**
+instead of one long one — `/research`, `/plan`, and `/fleet` each hand off
+a *distilled* result to the next stage, not their entire context:
+```
+Terminal 1                Terminal 2                 Terminal 3
+copilot                    copilot                     copilot
+/research                  /plan                       /fleet
+(research the feature)     (paste research findings,   (paste the plan,
+                            plan the implementation)    implement in parallel)
+```
+- **Terminal 1 — `/research`**: investigate and narrow down which files
+  matter and what approach to take. Its output ("plan input") is what you
+  hand to Terminal 2 — not the raw investigation trail.
+- **Terminal 2 — `/plan`**: takes that research summary, reasons about the
+  precise spec/diff plan, and hands *that* to Terminal 3.
+- **Terminal 3 — `/fleet`**: takes the precise plan and turns it into real
+  change calls, in parallel workstreams.
+
+💰 **Cost tip:** this mirrors how the habits below are designed to be used —
+each stage only carries forward a *summary*, not the full context of the
+stage before it. One giant session doing research + planning + parallel
+implementation carries the token cost of all three stages, stacked, for
+every remaining turn. Three handoff-linked sessions don't.
+
 ### 1. `/research` — Research instead of guessing
 ```
 /research
@@ -52,6 +77,7 @@ gets thrown away (and re-paid for) once research proves it wrong.
 ### 2. `/plan` — Plan before you spend
 ```
 /plan
+> Here's what /research found: <paste the summary, not the full transcript>
 > Plan adding a "priority" field (low/medium/high) to tasks.json, a
 > --priority flag to the CLI, and color-coded priority badges + a filter
 > dropdown in web-app - plus a fix for the duplicate id bug.
@@ -63,6 +89,8 @@ later — review the plan *before* letting Copilot touch any code.
 ### 3. `/fleet` — Parallelize instead of repeating yourself
 ```
 /fleet
+> Here's the plan: <paste the plan spec, not the full research+planning
+> transcript>
 > Build the priority feature (CLI + web badges/filter) AND fix the
 > id-generation bug AND add regression tests for both, as parallel
 > workstreams.

@@ -15,6 +15,38 @@ you're in.
 - **Global skills** are reusable capabilities available in every project,
   not just one.
 
+### 💡 Cache tokens: why repeated context gets cheaper
+Every turn resends your system prompt, tools, prior files, and responses —
+that's "1st loop" cost. On the *next* turn, anything unchanged from before
+(system prompt, already-read files, earlier responses) can often be served
+from a **token cache** instead of being reprocessed from scratch:
+
+```
+1st loop:  [system prompt & tools][prompt][file][response]           <- all billed as input/output
+2nd loop:  [cached: system prompt, prompt, file, response][new prompt][new file][response]
+                └── cache input tokens (not guaranteed, usually cheaper) ──┘
+```
+
+This is exactly why lean global instructions (and small, stable local
+skills) pay off twice: they're small to begin with, *and* they're prime
+candidates for the cache since they rarely change between turns. A global
+instructions file that changes every session never gets this benefit.
+
+### 💡 Model choice: auto vs. a fixed model
+Day 1 left you on **Auto** mode — a good default while exploring. Starting
+now, switch to a fixed model so every remaining lab gives repeatable,
+comparable results across the room:
+```
+/model
+> claude-sonnet-5
+```
+As a rule of thumb for your own work later: reasoning-heavy models (Opus,
+GPT-5.5) are worth their extra cost for planning/architecture/debugging;
+a mid-tier model like Sonnet is the right default for day-to-day
+implementation (which is what the rest of this lab uses); save the
+lightest models for small, repetitive tasks. Auto is a fine default when
+you're not sure which tier a task needs.
+
 ## Steps
 
 1. **Find your global config location.** Ask Copilot CLI directly:

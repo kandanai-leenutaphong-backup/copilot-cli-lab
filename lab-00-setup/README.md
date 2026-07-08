@@ -31,14 +31,24 @@ Install, authenticate, and run GitHub Copilot CLI for the first time.
    ```
    Copilot should read the files and summarize `mewpilot-tasks`.
 
-4. **Try your first real prompt** — ask it to run the tests:
+4. **Check your model.** Run `/model` and confirm you're on **Auto**. Auto
+   mode picks the right model for the task automatically — a good, lazy
+   default while you're still getting oriented today. From Day 2 onward,
+   this lab switches you to a fixed model (`claude-sonnet-5`) so results
+   stay consistent and repeatable across every remaining lab:
+   ```
+   /model
+   > (leave on auto for today)
+   ```
+
+5. **Try your first real prompt** — ask it to run the tests:
    ```
    > Run the test suite and tell me what happens
    ```
    Notice anything? (Hint: keep this failing test in mind — Team Mewpilot will
    come back to it in Day 4.)
 
-5. **See the whole app, not just the code** — fire up the web UI:
+6. **See the whole app, not just the code** — fire up the web UI:
    ```
    node web-app/server.js
    ```

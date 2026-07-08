@@ -11,20 +11,45 @@ hands-on required.)
 
 ## Steps
 
-1. **Check current usage.** In GitHub, go to
-   **Settings → Billing and licensing → Copilot** (org or personal, depending
-   on your access) and review active seats / usage.
+1. **Understand usage-based billing (UBB).** Copilot billing has two
+   layers:
+   - **Seats** — a flat per-user cost for platform access (IDE, CLI, chat).
+   - **Premium requests / tokens** — usage-based cost on top, driven by
+     *which model* you call and *how much* context you send it. Pricier
+     reasoning models (Opus-tier, GPT-5.5-tier) cost more per request than
+     mid-tier (Sonnet-tier) or light models (Haiku/mini-tier) — the same
+     model-tier choice from Day 2 directly drives this bill.
 
-2. **Identify optimization levers**, and discuss as a team which apply here:
+2. **Check current usage.** In GitHub, go to
+   **Settings → Billing and licensing → Copilot** (org or personal, depending
+   on your access) and review active seats / usage, including a breakdown
+   by model if available.
+
+3. **Understand layered budgets.** Larger orgs typically set budgets at
+   more than one level — e.g. an org-wide monthly cap, with team- or
+   project-level budgets underneath it, so one runaway workflow can't blow
+   the whole org's spend. Ask: does your org set budgets at just one layer,
+   or several?
+
+4. **Identify optimization levers**, and discuss as a team which apply here
+   — several of these are the exact same habits practiced earlier today:
    - Right-sizing seat assignments (remove inactive seats)
    - Choosing appropriate plans/tiers for different roles
-   - Being mindful of premium request usage on heavier models/features
+   - **Model choice** — default to Auto or a mid-tier model; reserve
+     premium reasoning models for planning/debugging, not routine
+     implementation (Day 2 / Day 4)
+   - **Provide only relevant context** — smaller prompts, `/compact`,
+     `/handoff`, and starting new sessions instead of letting one session's
+     context grow unbounded (Day 4)
+   - **Divide and conquer** — `/research` → `/plan` → `/fleet` handoffs
+     keep each stage's context small instead of one giant session paying
+     for everything at once (Day 4)
    - Setting budgets/alerts where available
 
-3. **Checklist — run through with your team:**
+5. **Checklist — run through with your team:**
    - [ ] Do we know how many Copilot seats are active vs. assigned?
-   - [ ] Do we know which features drive the most usage?
-   - [ ] Is there a budget or alert threshold set?
+   - [ ] Do we know which features/models drive the most usage?
+   - [ ] Is there a budget or alert threshold set, and at what layer(s)?
    - [ ] Is there an owner responsible for reviewing this monthly?
 
 ## 🎉 Try It: Fun Checkpoint

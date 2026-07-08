@@ -56,18 +56,18 @@ cat ../lab-00-setup/README.md
 Ready? Head to [`lab-00-setup/README.md`](./lab-00-setup/README.md) to kick off Day 1.
 
 ## Lab Agenda & Timing
-Rough per-lab timing — plan for **~2.25 to 2.75 hours** solo, or **~3.25 to
-3.75 hours** as a facilitated workshop with discussion between labs.
+Rough per-lab timing — plan for **~2.5 to 3 hours** solo, or **~3.5 to
+4 hours** as a facilitated workshop with discussion between labs.
 
 | Lab | Focus | Time |
 |---|---|---|
-| `lab-00-setup` | Install, auth, first prompts, run the web app | 10–15 min |
-| `lab-01-global-instructions` | Global instructions & global skills (kept lean!) | 15–20 min |
+| `lab-00-setup` | Install, auth, first prompts, run the web app, confirm Auto model | 10–15 min |
+| `lab-01-global-instructions` | Global instructions & global skills (kept lean!), cache tokens, switch to a fixed model | 20–25 min |
 | `lab-02-local-skills` | Explore & extend project-local skills | 15–20 min |
-| `lab-03-cost-saving-workflow` | Ship a visible feature + fix a bug, six cost-saving habits + three tool-choice habits | 50–65 min |
-| `lab-04-daily-automations` | Simple `/every` token-usage check + app-template automation | 15–20 min |
+| `lab-03-cost-saving-workflow` | Three-terminal research/plan/fleet, visible feature + bug fix, six cost-saving habits + three tool-choice habits | 60–75 min |
+| `lab-04-daily-automations` | Minute-level `/every` token-usage check + GitHub Copilot App install & template | 20–25 min |
 | `lab-05-slides-with-pptx` | Build your own deck with the pptx skill | 20–30 min |
-| `lab-06-billing-budgeting` (bonus) | Billing & budget optimization | 10–15 min |
+| `lab-06-billing-budgeting` (bonus) | Billing, layered budgets, & pricing/optimization levers | 15–20 min |
 
 💡 A recurring theme worth calling out live: keep **global** instructions
 as lean as possible (see `lab-01`) — they're resent on every turn, in every

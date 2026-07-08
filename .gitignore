@@ -4,3 +4,4 @@ slides/*.pdf
 slides/*.jpg
 lab-04-daily-automations/chronicles/*.md
 !lab-04-daily-automations/chronicles/.gitkeep
+raw_slides/**

@@ -14,6 +14,10 @@ const {
   FaWallet,
   FaFlagCheckered,
   FaCat,
+  FaMemory,
+  FaBalanceScale,
+  FaLayerGroup,
+  FaChartPie,
 } = require("react-icons/fa");
 
 // ---- Palette: "Coral Energy" (playful, fits the cat/mewpilot story) ----
@@ -66,6 +70,10 @@ async function build() {
     ["wallet", FaWallet],
     ["flag", FaFlagCheckered],
     ["cat", FaCat],
+    ["memory", FaMemory],
+    ["balance", FaBalanceScale],
+    ["layers", FaLayerGroup],
+    ["chart", FaChartPie],
   ];
   for (const [key, Comp] of iconSpecs) {
     icons[key] = { onCream: await iconToBase64Png(Comp, "FFFFFF", 256) };
@@ -202,6 +210,93 @@ async function build() {
     notes: "Speaker note: keep global instructions VERY lean to optimize token usage - they are resent on every single turn, in every project, forever, so every extra line is a permanent, repeating cost. Two rules (commit convention + sign-off) is deliberately the whole file. Anything project-specific belongs in a local skill (Day 3) instead.",
   });
 
+  // ---------------------------------------------------------------
+  // Concept slide — Context Window & Tokens (cache tokens)
+  // ---------------------------------------------------------------
+  {
+    const slide = pres.addSlide();
+    slide.background = { color: CREAM };
+    addIconCircle(slide, icons.memory.onCream, { x: 0.5, y: 0.5, d: 0.8, circleColor: NAVY });
+    slide.addText("Context Window & Tokens", {
+      x: 1.5, y: 0.5, w: 8, h: 0.7, fontSize: 26, bold: true, color: CHARCOAL, fontFace: "Georgia", valign: "middle", margin: 0,
+    });
+    slide.addText("Why the 2nd turn is often cheaper than the 1st", {
+      x: 0.5, y: 1.3, w: 9, h: 0.4, fontSize: 14, italic: true, color: "6B6055", fontFace: "Calibri", margin: 0,
+    });
+
+    const rowY = [1.95, 3.15];
+    const rows = [
+      { label: "1ST LOOP", parts: ["system prompt & tools", "prompt", "file", "response"], note: "all billed as input/output tokens" },
+      { label: "2ND LOOP", parts: ["cached: system prompt, prompt, file, response", "new prompt", "new file", "response"], note: "cache input tokens - not guaranteed, usually cheaper" },
+    ];
+    rows.forEach((row, i) => {
+      const y = rowY[i];
+      slide.addText(row.label, { x: 0.5, y, w: 1.4, h: 0.5, fontSize: 12, bold: true, color: NAVY, fontFace: "Consolas", valign: "middle", margin: 0 });
+      let x = 2.0;
+      row.parts.forEach((p, j) => {
+        const w = j === 0 && i === 1 ? 2.6 : 1.5;
+        const fill = i === 1 && j === 0 ? GOLD : (j % 2 === 0 ? CORAL : NAVY);
+        slide.addShape("rect", { x, y, w, h: 0.55, fill: { color: fill, transparency: 10 }, line: { color: "FFFFFF", width: 1 } });
+        slide.addText(p, { x, y, w, h: 0.55, fontSize: 9, color: fill === GOLD ? CHARCOAL : "FFFFFF", fontFace: "Calibri", align: "center", valign: "middle", margin: 0 });
+        x += w + 0.08;
+      });
+      slide.addText(row.note, { x: 0.5, y: y + 0.62, w: 8.8, h: 0.35, fontSize: 11, italic: true, color: "6B6055", fontFace: "Calibri", margin: 0 });
+    });
+
+    slide.addText(
+      "Small, stable global instructions & local skills (Day 2/3) are prime candidates for caching - they rarely change between turns.",
+      { x: 0.5, y: 4.55, w: 9, h: 0.6, fontSize: 13, color: NAVY, fontFace: "Calibri", margin: 0 }
+    );
+    addFooter(slide, "copilot-cli-lab · concept", false);
+  }
+
+  // ---------------------------------------------------------------
+  // Concept slide — The two biggest levers for optimizing quality & tokens
+  // ---------------------------------------------------------------
+  {
+    const slide = pres.addSlide();
+    slide.background = { color: CREAM };
+    slide.addText("The Two Biggest Levers", {
+      x: 0.5, y: 0.45, w: 9, h: 0.6, fontSize: 28, bold: true, color: CHARCOAL, fontFace: "Georgia", margin: 0,
+    });
+    slide.addText("for optimizing quality & tokens", {
+      x: 0.5, y: 1.05, w: 9, h: 0.4, fontSize: 14, italic: true, color: "6B6055", fontFace: "Calibri", margin: 0,
+    });
+
+    // Left card: model choice
+    slide.addShape("rect", { x: 0.5, y: 1.65, w: 4.3, h: 3.55, fill: { color: "FFFFFF" }, line: { color: "EFE3D3", width: 1 },
+      shadow: { type: "outer", color: "000000", blur: 6, offset: 2, angle: 135, opacity: 0.1 } });
+    slide.addShape("rect", { x: 0.5, y: 1.65, w: 4.3, h: 0.12, fill: { color: CORAL } });
+    addIconCircle(slide, icons.balance.onCream, { x: 0.75, y: 1.95, d: 0.6, circleColor: NAVY });
+    slide.addText("Model choice & auto mode", { x: 1.55, y: 1.95, w: 3.1, h: 0.6, fontSize: 15, bold: true, color: NAVY, fontFace: "Georgia", valign: "middle", margin: 0 });
+    slide.addText(
+      [
+        { text: "Reasoning models (Opus, GPT-5.5) - sync tasks: planning, debugging", options: { bullet: true, breakLine: true, paraSpaceAfter: 8 } },
+        { text: "Mid-tier (Sonnet, GPT-5.4) - everyday async implementation", options: { bullet: true, breakLine: true, paraSpaceAfter: 8 } },
+        { text: "Light-tier (Haiku, GPT-mini) - small, repetitive refactors", options: { bullet: true, breakLine: true, paraSpaceAfter: 8 } },
+        { text: "Auto Mode - a fine, lazy default when unsure", options: { bullet: true } },
+      ],
+      { x: 0.75, y: 2.65, w: 3.85, h: 2.4, fontSize: 12.5, color: "4A4038", fontFace: "Calibri" }
+    );
+
+    // Right card: relevant context
+    slide.addShape("rect", { x: 5.15, y: 1.65, w: 4.35, h: 3.55, fill: { color: "FFFFFF" }, line: { color: "EFE3D3", width: 1 },
+      shadow: { type: "outer", color: "000000", blur: 6, offset: 2, angle: 135, opacity: 0.1 } });
+    slide.addShape("rect", { x: 5.15, y: 1.65, w: 4.35, h: 0.12, fill: { color: GOLD } });
+    addIconCircle(slide, icons.folder.onCream, { x: 5.4, y: 1.95, d: 0.6, circleColor: NAVY });
+    slide.addText("Provide only relevant context", { x: 6.2, y: 1.95, w: 3.15, h: 0.6, fontSize: 15, bold: true, color: NAVY, fontFace: "Georgia", valign: "middle", margin: 0 });
+    slide.addText(
+      [
+        { text: "As much as required, as little as necessary", options: { bullet: true, breakLine: true, paraSpaceAfter: 8 } },
+        { text: "Reference files by path - don't paste 50K-char blobs", options: { bullet: true, breakLine: true, paraSpaceAfter: 8 } },
+        { text: "/clear or start a new session often", options: { bullet: true, breakLine: true, paraSpaceAfter: 8 } },
+        { text: "Delegate heavy exploration to subagents", options: { bullet: true } },
+      ],
+      { x: 5.4, y: 2.65, w: 3.9, h: 2.4, fontSize: 12.5, color: "4A4038", fontFace: "Calibri" }
+    );
+    addFooter(slide, "copilot-cli-lab · concept", false);
+  }
+
   await addDaySlide({
     dayLabel: "DAY 3 · LOCAL",
     title: "Project-Local Skills",
@@ -217,6 +312,43 @@ async function build() {
     tryIt: "Ship color-coded priority badges, fix the duplicate task-id bug, then watch /context and /usage prove the savings.",
     iconKey: "coins",
   });
+
+  // ---------------------------------------------------------------
+  // Concept slide — Divide and conquer: Research -> Plan -> Implement
+  // ---------------------------------------------------------------
+  {
+    const slide = pres.addSlide();
+    slide.background = { color: CREAM };
+    slide.addText("Divide and Conquer Your Work", {
+      x: 0.5, y: 0.45, w: 9, h: 0.6, fontSize: 28, bold: true, color: CHARCOAL, fontFace: "Georgia", margin: 0,
+    });
+    slide.addText("Research → Plan → Implement, in three separate terminals", {
+      x: 0.5, y: 1.05, w: 9, h: 0.4, fontSize: 14, italic: true, color: "6B6055", fontFace: "Calibri", margin: 0,
+    });
+
+    const stages = [
+      ["Terminal 1", "/research", "Investigate & narrow down the approach", CORAL],
+      ["Terminal 2", "/plan", "Turn findings into a precise spec", NAVY],
+      ["Terminal 3", "/fleet", "Implement in parallel workstreams", GOLD],
+    ];
+    stages.forEach((s, i) => {
+      const x = 0.5 + i * 3.05;
+      slide.addShape("rect", { x, y: 1.75, w: 2.8, h: 2.5, fill: { color: "FFFFFF" }, line: { color: "EFE3D3", width: 1 },
+        shadow: { type: "outer", color: "000000", blur: 6, offset: 2, angle: 135, opacity: 0.1 } });
+      slide.addShape("rect", { x, y: 1.75, w: 2.8, h: 0.12, fill: { color: s[3] } });
+      slide.addText(s[0], { x: x + 0.2, y: 2.0, w: 2.4, h: 0.3, fontSize: 11, bold: true, color: "6B6055", fontFace: "Consolas", margin: 0 });
+      slide.addText(s[1], { x: x + 0.2, y: 2.3, w: 2.4, h: 0.5, fontSize: 20, bold: true, color: NAVY, fontFace: "Consolas", margin: 0 });
+      slide.addText(s[2], { x: x + 0.2, y: 2.85, w: 2.4, h: 1.2, fontSize: 12.5, color: "4A4038", fontFace: "Calibri", margin: 0 });
+      if (i < 2) {
+        slide.addText("→", { x: x + 2.8, y: 2.6, w: 0.25, h: 0.5, fontSize: 22, bold: true, color: CORAL, align: "center", margin: 0 });
+      }
+    });
+    slide.addText(
+      "Each stage hands the next a distilled summary - not its full context. Three lean sessions beat one session paying for everything, stacked.",
+      { x: 0.5, y: 4.5, w: 9, h: 0.6, fontSize: 13, color: NAVY, fontFace: "Calibri", margin: 0 }
+    );
+    addFooter(slide, "copilot-cli-lab · concept", false);
+  }
 
   await addDaySlide({
     dayLabel: "DAY 5 · AUTOMATE",
@@ -241,6 +373,32 @@ async function build() {
     tryIt: "Find your Copilot usage in Settings → Billing, and guess your monthly spend before you look.",
     iconKey: "wallet",
   });
+
+  // ---------------------------------------------------------------
+  // Concept slide — Pricing & Budgeting summary
+  // ---------------------------------------------------------------
+  {
+    const slide = pres.addSlide();
+    slide.background = { color: CREAM };
+    slide.addText("Pricing & Budgeting, In Brief", {
+      x: 0.5, y: 0.45, w: 9, h: 0.6, fontSize: 28, bold: true, color: CHARCOAL, fontFace: "Georgia", margin: 0,
+    });
+    const cards = [
+      ["chart", "Two billing layers", "Flat per-seat cost, plus usage-based premium requests/tokens driven by model choice & context size."],
+      ["layers", "Layered budgets", "Org-wide caps, with team/project budgets underneath, so one workflow can't blow the whole spend."],
+      ["balance", "Same levers, same bill", "Model tier + context size (Day 2-4 habits) are exactly what drives the usage-based portion of the bill."],
+    ];
+    cards.forEach((c, i) => {
+      const x = 0.5 + i * 3.1;
+      slide.addShape("rect", { x, y: 1.5, w: 2.85, h: 2.9, fill: { color: "FFFFFF" }, line: { color: "EFE3D3", width: 1 },
+        shadow: { type: "outer", color: "000000", blur: 6, offset: 2, angle: 135, opacity: 0.1 } });
+      slide.addShape("rect", { x, y: 1.5, w: 2.85, h: 0.12, fill: { color: NAVY } });
+      addIconCircle(slide, icons[c[0]].onCream, { x: x + 0.2, y: 1.85, d: 0.6, circleColor: CORAL });
+      slide.addText(c[1], { x: x + 1.0, y: 1.85, w: 1.7, h: 0.6, fontSize: 15, bold: true, color: NAVY, fontFace: "Georgia", valign: "middle", margin: 0 });
+      slide.addText(c[2], { x: x + 0.2, y: 2.65, w: 2.45, h: 1.6, fontSize: 12.5, color: "4A4038", fontFace: "Calibri", margin: 0 });
+    });
+    addFooter(slide, "copilot-cli-lab · concept", false);
+  }
 
   // ---------------------------------------------------------------
   // Final slide — Wrap-up (dark, celebratory)
