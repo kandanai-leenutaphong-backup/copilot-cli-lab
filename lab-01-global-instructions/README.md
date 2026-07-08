@@ -23,27 +23,33 @@ you're in.
    > Where do you look for global instructions and global skills on this machine?
    ```
 
-2. **Write a global instruction.** Create/edit your global instructions file
-   and add a couple of house rules for "Team Mewpilot", e.g.:
+2. **Install the pre-built toolkit.** This repo ships a ready-to-use
+   [`global-setup/`](../global-setup/README.md) folder — a global
+   instructions template plus two real global skills (`handoff` and
+   `create-copilot-skills`), extracted so you don't start from a blank page:
    ```
-   - Always use conventional commits (feat:, fix:, chore:) in commit messages
-   - Prefer small, incremental diffs over large rewrites
-   - Never delete tests without explicit approval
+   cat ../global-setup/global-instructions.template.md   # review, then merge into your global instructions
+   cp -r ../global-setup/skills/handoff ~/.copilot/skills/handoff
+   cp -r ../global-setup/skills/create-copilot-skills ~/.copilot/skills/create-copilot-skills
+   copilot
+   /skills reload
    ```
 
 3. **Verify it's picked up.** Open a Copilot CLI session in `sample-app/` and
    ask it to draft a commit message for a hypothetical change. Confirm it
-   follows your conventional-commit rule.
+   follows the conventional-commit rule from the template.
 
-4. **Create a global skill.** Add a simple global skill (e.g., a "changelog
-   writer" or "commit message helper") following the skill format Copilot CLI
-   expects. Ask Copilot itself for the exact folder/file structure if unsure:
+4. **Try the installed skills:**
    ```
-   > How do I create a global skill, and where does it go?
+   /skills info handoff
+   /skills info create-copilot-skills
    ```
+   `create-copilot-skills` is the meta-skill Copilot uses to scaffold *new*
+   skills correctly — you'll use it again on Day 4.
 
-5. **Test the skill from a different project** (or a scratch folder outside
-   `copilot-cli-lab/`) to prove it really is global, not local.
+5. **Test from a different project** (or a scratch folder outside
+   `copilot-cli-lab/`) to prove the instructions and skills really are
+   global, not local.
 
 ## 🎉 Try It: Fun Checkpoint
 Add a house rule that's a little silly (e.g., "always end explanations with

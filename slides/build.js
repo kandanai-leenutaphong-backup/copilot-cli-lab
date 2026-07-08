@@ -8,9 +8,9 @@ const {
   FaTerminal,
   FaGlobe,
   FaFolderOpen,
-  FaBug,
-  FaHammer,
+  FaCoins,
   FaCalendarCheck,
+  FaFilePowerpoint,
   FaWallet,
   FaFlagCheckered,
   FaCat,
@@ -60,9 +60,9 @@ async function build() {
     ["terminal", FaTerminal],
     ["globe", FaGlobe],
     ["folder", FaFolderOpen],
-    ["bug", FaBug],
-    ["hammer", FaHammer],
+    ["coins", FaCoins],
     ["calendar", FaCalendarCheck],
+    ["pptx", FaFilePowerpoint],
     ["wallet", FaWallet],
     ["flag", FaFlagCheckered],
     ["cat", FaCat],
@@ -142,7 +142,7 @@ async function build() {
     const cards = [
       ["folder", "One repo", "copilot-cli-lab/ - a shared codebase (sample-app/) the whole story runs on."],
       ["cat", "One story", "Every lab is a \"day\" in Team Mewpilot's sprint, told through the same characters."],
-      ["hammer", "Hands-on first", "Every lab runs real Copilot CLI commands against real code - not slides about theory."],
+      ["coins", "Hands-on first", "Every lab runs real Copilot CLI commands against real code - not slides about theory."],
     ];
     cards.forEach((c, i) => {
       const x = 0.5 + i * 3.1;
@@ -201,33 +201,33 @@ async function build() {
   await addDaySlide({
     dayLabel: "DAY 3 · LOCAL",
     title: "Project-Local Skills",
-    beat: "Global rules are great, but this codebase has its own quirks. Local skills scope Copilot to just this project.",
-    tryIt: "Create a local skill just for sample-app, and compare it to Day 2's global one.",
+    beat: "This codebase has its own quirks global rules don't cover - and real local skills are already set up. Day 3 is about exploring them.",
+    tryIt: "Ask Copilot to review the code and watch the pre-built task-id-guard skill kick in.",
     iconKey: "folder",
   });
 
   await addDaySlide({
-    dayLabel: "DAY 4 · SCENARIOS",
-    title: "The Bug That Stumped the Team",
-    beat: "/plan, /research, /fleet, /rubberduck, /chronicles - five ways Copilot CLI helps hunt down a real, reproducible bug.",
-    tryIt: "Fix the duplicate task-id bug and watch the failing test turn green.",
-    iconKey: "bug",
+    dayLabel: "DAY 4 · COST-SAVING",
+    title: "Working Smart, Not Expensive",
+    beat: "Nine slash commands, one real bug, five cost-saving habits - plan, research, and parallelize before you spend a single token.",
+    tryIt: "Fix the duplicate task-id bug, then count how many sessions it would've taken without these habits.",
+    iconKey: "coins",
   });
 
   await addDaySlide({
-    dayLabel: "DAY 5 · CUSTOM",
-    title: "Build Your Own Teammate",
-    beat: "/create-skill builds a skill in Team Mewpilot's own voice. /handoff passes context to whoever picks up next.",
-    tryIt: "Hand off your session cold to a teammate and see if they can pick up without missing a beat.",
-    iconKey: "hammer",
-  });
-
-  await addDaySlide({
-    dayLabel: "DAY 6 · AUTOMATE",
+    dayLabel: "DAY 5 · AUTOMATE",
     title: "Automating the Busywork",
-    beat: "The GitHub Copilot App's /new keeps context clean between tasks; /compact tidies up before a handoff.",
-    tryIt: "Run /new for a fresh task, then /compact before wrapping up for the day.",
+    beat: "A /chronicles cost-tip template plus a 9am scheduled issue triage (/every) - the team's morning report writes itself.",
+    tryIt: "Schedule the 9am triage prompt, then watch a fresh chronicle appear before your first coffee.",
     iconKey: "calendar",
+  });
+
+  await addDaySlide({
+    dayLabel: "DAY 6 · SHOW OFF",
+    title: "Build the Deck With /pptx",
+    beat: "The same pptx skill that built this deck can build yours - straight from this repo's READMEs and commit history.",
+    tryIt: "Ask Copilot to build a 6-8 slide demo-day deck from this repo, then present it in under 2 minutes.",
+    iconKey: "pptx",
   });
 
   await addDaySlide({

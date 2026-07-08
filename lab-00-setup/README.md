@@ -38,6 +38,15 @@ Install, authenticate, and run GitHub Copilot CLI for the first time.
    Notice anything? (Hint: keep this failing test in mind — Team Mewpilot will
    come back to it in Day 4.)
 
+5. **See the whole app, not just the code** — fire up the web UI:
+   ```
+   node web-app/server.js
+   ```
+   Open http://localhost:4173 in your browser. This is the same
+   `mewpilot-tasks` app, with a small web front end on top — add a task in
+   the browser, then run `node src/index.js list` in a terminal and watch
+   it show up there too.
+
 ## 🎉 Try It: Fun Checkpoint
 Ask Copilot CLI: *"If you were a member of Team Mewpilot, what would you do
 first on this codebase?"* — see if its answer matches your instincts.
