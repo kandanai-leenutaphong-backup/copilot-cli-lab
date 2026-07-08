@@ -2,9 +2,10 @@
 
 Welcome! In this lab you'll play as **Team Mewpilot**, a small dev team racing to
 ship a side project (`sample-app/`, a scrappy task-tracker with both a CLI and a
-small web app) before their self-imposed deadline. Each lab is a "day" in the
+small web app) before their self-imposed deadline. Each lab is a beat in the
 sprint where the team discovers a new GitHub Copilot CLI capability that helps
-them move faster.
+them move faster. The whole workshop runs in a single day — labs 00-06, back to
+back, with a break or two.
 
 You'll use the **real GitHub Copilot CLI** the whole way through — every lab is
 hands-on, run in your own terminal against the `sample-app/` codebase.
@@ -21,27 +22,27 @@ valuable teammate. Let's go find out.
 - [Node.js](https://nodejs.org/) 18+ (to run `sample-app/`)
 - A GitHub account with an active Copilot subscription
 - The [`gh` CLI](https://cli.github.com/), authenticated (`gh auth status`) —
-  used by `/delegate` (Day 4) and the GitHub Copilot App automation (Day 5)
+  used by `/delegate` (lab-03) and the GitHub Copilot App automation (lab-04)
 
 ## How This Repo Is Organized
 ```
 copilot-cli-lab/
   sample-app/                      the shared codebase - CLI + web app ("Mission Control")
   global-setup/                    ready-to-install global skills & instructions template
-  lab-00-setup/                    Day 1: install & auth the Copilot CLI, run the web app
-  lab-01-global-instructions/      Day 2: install global instructions & global skills
-  lab-02-local-skills/             Day 3: explore the pre-built project-local skills
-  lab-03-cost-saving-workflow/     Day 4: /research, /plan, /fleet, /rubberduck, /context,
+  lab-00-setup/                    LAB 00: install & auth the Copilot CLI, run the web app
+  lab-01-global-instructions/      LAB 01: install global instructions & global skills
+  lab-02-local-skills/             LAB 02: explore the pre-built project-local skills
+  lab-03-cost-saving-workflow/     LAB 03: /research, /plan, /fleet, /rubberduck, /context,
                                     /chronicle, /create-skill, /handoff, /delegate, /new, /compact,
                                     grep/glob-over-bash, file-refs-not-pastes - ship a visible
                                     feature + fix a bug, cost-saving focus
-  lab-04-daily-automations/        Day 5: dumb-simple /every token-usage check + app-template automation
-  lab-05-slides-with-pptx/         Day 6: build your own deck with the pptx skill
-  lab-06-billing-budgeting/        Bonus: billing & budget optimization
+  lab-04-daily-automations/        LAB 04: dumb-simple /every token-usage check + app-template automation
+  lab-05-slides-with-pptx/         LAB 05: build your own deck with the pptx skill
+  lab-06-billing-budgeting/        LAB 06 (bonus): billing & budget optimization
   slides/                          the deck this lab itself ships with
 ```
 
-Work through the labs **in order** — each one builds on the previous day's
+Work through the labs **in order** — each one builds on the previous lab's
 story and on the shared `sample-app/` codebase. Every lab folder has its own
 `README.md` with the story beat, the objective, and step-by-step instructions.
 
@@ -53,7 +54,7 @@ node web-app/server.js &      # then open http://localhost:4173
 cat ../lab-00-setup/README.md
 ```
 
-Ready? Head to [`lab-00-setup/README.md`](./lab-00-setup/README.md) to kick off Day 1.
+Ready? Head to [`lab-00-setup/README.md`](./lab-00-setup/README.md) to kick off Lab 00.
 
 ## Lab Agenda & Timing
 Rough per-lab timing — plan for **~2.5 to 3 hours** solo, or **~3.5 to
