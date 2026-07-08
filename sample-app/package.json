@@ -1,0 +1,14 @@
+{
+  "name": "mewpilot-tasks",
+  "version": "0.1.0",
+  "description": "Team Mewpilot's scrappy little task tracker CLI - the shared codebase for the Copilot CLI hands-on lab.",
+  "main": "src/index.js",
+  "bin": {
+    "mewpilot-tasks": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node test/tasks.test.js"
+  },
+  "license": "MIT"
+}
