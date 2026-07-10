@@ -54,9 +54,9 @@ Install, authenticate, and run GitHub Copilot CLI for the first time.
    > sports-class app. Do not write code yet.
    ```
 
-6. **Save the build for the next lab.** Lab 01 uses skills to generate the
-   first working version of the app. Keeping this folder empty now makes that
-   build exercise easy to see and reason about.
+6. **Save the build for Lab 02.** Lab 01 uses generic skill questions only.
+   Keeping this folder empty now makes the Lab 02 build exercise easy to see
+   and reason about.
 
 ## 🎉 Try It: Fun Checkpoint
 Ask Copilot CLI: *"If you were a member of Team Mewpilot, what would you do

@@ -8,7 +8,7 @@ lab materials, not application modules.
 
 | Path | Purpose |
 | --- | --- |
-| `sample-app/` | Empty starter for the dependency-free Node.js sports-class booking app built in Lab 01. See its `AGENTS.md` before changing it. |
+| `sample-app/` | Empty starter for the dependency-free Node.js sports-class booking app built in Lab 02. See its `AGENTS.md` before changing it. |
 | `global-setup/` | Templates and ready-to-install global Copilot instructions and skills. |
 | `lab-00-setup/` | CLI installation, authentication, and first-run setup. |
 | `lab-01-skills-and-instructions/` | Copilot instructions and skills exercises. |
@@ -28,7 +28,7 @@ lab materials, not application modules.
 - `sample-app/` has local instructions in
   `sample-app/.github/copilot-instructions.md` that apply to all changes
   there.
-- `sample-app/` is intentionally empty until Lab 01. Keep the app
+- `sample-app/` is intentionally empty until Lab 02. Keep the app
   dependency-free unless the active lab explicitly changes that constraint.
 
 ## Common commands

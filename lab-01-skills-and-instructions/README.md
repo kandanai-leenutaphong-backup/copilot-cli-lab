@@ -1,14 +1,14 @@
-# Day 2 - Build Once, Teach Copilot the Rules
+# Day 2 - Teach Copilot the Rules
 
-*Team Mewpilot has an empty folder and a focused idea: help people find and
-book sports classes. Before they build, they want a few small rules that make
-Copilot's help predictable.*
+*Team Mewpilot has an empty starter folder and a focused idea: help people
+find and book sports classes. Before they build anything, they explore how
+small, reusable rules make Copilot's help predictable.*
 
 ## Objective
 
-Build a small sports-class search and booking app in `sample-app/`, then learn
-how short, reusable project-local skills guide future work without repeating
-the same prompt.
+Learn how short, reusable project-local skills guide future work without
+repeating the same prompt. This lab uses generic questions only. The
+sports-class app is implemented in Lab 02.
 
 ## Part 1 - The concept: global and local skills
 
@@ -21,9 +21,9 @@ the same prompt.
 Today's hands-on work is entirely project-local. Nothing is installed into
 your personal Copilot configuration.
 
-## Part 2 - Hands-on: build the app
+## Part 2 - Hands-on: practise generic skill questions
 
-### 1. Inspect the local skills with slash commands
+### 1. Inspect the local skills with generic questions
 
 ```sh
 cd ../sample-app
@@ -43,36 +43,18 @@ The two included skills are deliberately generic:
 Try one with a slash command:
 
 ```text
-/code-review-checklist Review package.json and the empty starter. What must be
-created before this can be a working app?
+/code-review-checklist What correctness, validation, and regression-test
+questions should I ask before merging a small Node.js change?
 ```
 
-### 2. Generate a focused first version
-
-Ask Copilot to build the app, not a large production platform:
+Try the status-update skill with a fictional project update:
 
 ```text
-Build a dependency-free Node.js sports-class search and booking app in this
-empty starter. Create src/index.js as the server entry point, a small browser
-UI, a local JSON data file created on demand, and Node built-in tests.
-
-Seed a few classes with name, sport, time, instructor, capacity, and booked
-places. Users must be able to search by sport and book an available place.
-Validate all client input and prevent bookings beyond capacity. Update
-package.json with start, web, and test scripts. Keep the implementation small.
+/status-update Turn this fictional update into a concise status note: "The
+team chose a feature, documented the constraints, and is ready to plan."
 ```
 
-After reviewing the generated plan and code, run:
-
-```sh
-npm test
-npm run web
-```
-
-Open the local URL printed by the server. Search for a sport and make a booking
-to confirm the app has a visible, understandable result.
-
-### 3. Create one simple, reusable skill
+### 2. Create one simple, reusable skill
 
 Use the meta-skill as a slash command:
 
@@ -83,12 +65,14 @@ Use the meta-skill as a slash command:
 Then give it this request:
 
 ```text
-Create a project-local skill named architecture-sketch in .github/skills/.
+Create a project-local skill named architecture-sketch at
+`./.github/skills/architecture-sketch/` in the current `sample-app` project.
 Keep it generic so it works for any small web or Node.js app. When invoked, it
 should inspect the requested code and write or update Architecture.md at the
-repository root. The document should briefly cover the app's purpose, main
-parts, data flow, storage, and how to run and test it. Use the normal SKILL.md
-frontmatter and keep the instructions short.
+project root. The document should briefly cover the app's purpose, main parts,
+data flow, storage, and how to run and test it. It must also include a Mermaid
+diagram that sketches the architecture. Use the normal SKILL.md frontmatter and
+keep the instructions short.
 ```
 
 Reload and inspect the new skill:
@@ -98,16 +82,17 @@ Reload and inspect the new skill:
 /skills info architecture-sketch
 ```
 
-Use the skill directly at the end of the exercise:
+Use the skill with a generic hypothetical example:
 
 ```text
-/architecture-sketch Sketch the architecture of this app.
+/architecture-sketch Sketch the architecture of a small Node.js web app with a
+browser client, a server, and local JSON storage.
 ```
 
 Review the generated `Architecture.md`. It should help a teammate understand
-the app without reading every source file.
+the hypothetical app without reading every source file.
 
-### 4. Confirm scoping
+### 3. Confirm scoping
 
 Open Copilot CLI in a scratch folder outside this repository and run
 `/skills list`. The project-local skills should not appear there. That is the
@@ -128,6 +113,6 @@ or repeat a long prompt word for word.
 
 ## What's Next
 
-Day 3 adds a small booking feature using a research, plan, and implementation
+Day 3 builds the sports-class app using a research, plan, and implementation
 workflow that keeps the session focused and cost-aware:
 [`lab-02-cost-saving-workflow`](../lab-02-cost-saving-workflow/README.md)

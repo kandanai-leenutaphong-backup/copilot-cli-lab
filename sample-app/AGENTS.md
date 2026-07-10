@@ -1,7 +1,7 @@
 # Team Mewpilot Sports
 
 This is an intentionally empty starter for a dependency-free Node.js
-sports-class search and booking app. Lab 01 creates the application.
+sports-class search and booking app. Lab 02 creates the application.
 
 ## Constraints
 
@@ -10,4 +10,4 @@ sports-class search and booking app. Lab 01 creates the application.
   place.
 - Store data in a local JSON file that is created on demand.
 - Validate all user-controlled input at the API boundary.
-- Add tests with Node's built-in test tools before moving on to Lab 02.
+- Add tests with Node's built-in test tools as part of Lab 02.

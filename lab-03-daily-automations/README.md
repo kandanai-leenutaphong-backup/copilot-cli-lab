@@ -41,7 +41,7 @@ That's it. No files, no flags, no GitHub API calls — just a scheduled
 prompt that reuses `/chronicle cost-tips` under the hood. Confirm it's
 scheduled:
 ```
-/tasks
+/every
 ```
 Watch it actually fire once or twice during the lab, then switch the
 interval to something daily (`every day at 9am`) before you leave — a

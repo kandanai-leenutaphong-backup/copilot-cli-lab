@@ -28,17 +28,14 @@ valuable teammate. Let's go find out.
 ## How This Repo Is Organized
 ```
 copilot-cli-lab/
-  sample-app/                      the shared sports-class app, built during Lab 01
+  sample-app/                      the shared sports-class app, built during Lab 02
   global-setup/                    ready-to-install global skills & instructions template
   lab-00-setup/                    LAB 00: install & auth the Copilot CLI, run the web app
-  lab-01-skills-and-instructions/  LAB 01: global instructions & global skills - concept only
-                                    (no hands-on, take-home guide at the end), then HANDS-ON:
-                                    explore, extend & create project-local skills using
-                                    create-copilot-skills
-  lab-02-cost-saving-workflow/     LAB 02: /research, /plan, /fleet, /rubberduck, /context,
-                                    /chronicle, /create-skill, /handoff, /delegate, /new, /compact,
-                                    grep/glob-over-bash, file-refs-not-pastes - ship a visible
-                                    booking feature, cost-saving focus
+  lab-01-skills-and-instructions/  LAB 01: generic questions about global and
+                                    project-local skills; create a project-local skill
+  lab-02-cost-saving-workflow/     LAB 02: /research, /plan, /implement, /rubber-duck,
+                                    /context, /chronicle, /handoff, /new, /compact - build
+                                    the sports-class app, cost-saving focus
   lab-03-daily-automations/        LAB 03: dumb-simple /every token-usage check + app-template automation
   lab-04-slides-with-pptx/         LAB 04: build your own deck with the pptx skill
   lab-05-billing-budgeting/        LAB 05 (bonus): billing & budget optimization
@@ -66,8 +63,8 @@ Rough per-lab timing — plan for **~2.5 to 3 hours** solo, or **~3.5 to
 | Lab | Focus | Time |
 |---|---|---|
 | `lab-00-setup` | Update, install, auth, and first prompts; confirm Auto model | 10–15 min |
-| `lab-01-skills-and-instructions` | Global instructions & global skills concept explained (not implemented, no hands-on) — then build a sports-class app and create simple project-local skills with `create-copilot-skills` | 30–40 min |
-| `lab-02-cost-saving-workflow` | Three-terminal research/plan/fleet, visible booking feature, six cost-saving habits + three tool-choice habits | 60–75 min |
+| `lab-01-skills-and-instructions` | Generic questions about global and project-local skills; create a simple project-local skill with `create-copilot-skills` | 30–40 min |
+| `lab-02-cost-saving-workflow` | Three-terminal research/plan/implementation, sports-class app with a visible waitlist, six cost-saving habits + three tool-choice habits | 60–75 min |
 | `lab-03-daily-automations` | Minute-level `/every` token-usage check + GitHub Copilot App install & template | 20–25 min |
 | `lab-04-slides-with-pptx` | Build your own deck with the pptx skill | 20–30 min |
 | `lab-05-billing-budgeting` (bonus) | Billing, layered budgets, & pricing/optimization levers | 15–20 min |

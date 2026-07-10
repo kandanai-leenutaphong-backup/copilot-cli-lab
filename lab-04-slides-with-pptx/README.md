@@ -27,7 +27,7 @@ straight from the repo's READMEs and commit history.
    a blank page:
    ```
    > Build a short (6-8 slide), story-driven deck called "Team Mewpilot:
-   > Demo Day" summarizing our sprint - pull the story beats from
+   > Demo Day" summarizing our sprint and show what our demo app in sample_app can do - pull the story beats from
    > README.md and lab-00 through lab-05, and pull real highlights from
    > `git log --oneline` in sample-app/. Keep text minimal and visual per
    > slide, like a real conference talk, not a text dump.
@@ -35,7 +35,7 @@ straight from the repo's READMEs and commit history.
 
 3. **Iterate like a real deck review.** Ask Copilot to:
    - Swap in a different color palette that fits "scrappy startup team".
-   - Add a slide with a screenshot of the sports-class app UI from Lab 01
+   - Add a slide with a screenshot of the sports-class app UI from Lab 02
      (`npm run web`, then a screenshot of the local URL).
    - Tighten any slide that feels text-heavy.
 

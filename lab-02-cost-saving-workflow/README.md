@@ -1,25 +1,22 @@
 # Day 3 - Working Smart, Not Expensive
 
-*The sports-class app works. For Friday's demo, Team Mewpilot wants a useful
-next step: when a class is full, let people join a waitlist instead of seeing a
-dead end.*
+*Team Mewpilot is ready to build its sports-class app. For Friday's demo, the
+first version must let people search classes, book an available place, and join
+a waitlist when a class is full.*
 
 ## Objective
 
-Add a visible waitlist feature to the sports-class search and booking app while
-practising research, planning, parallel work, reusable skills, and deliberate
-context management.
+Build a visible sports-class search and booking app with a waitlist feature
+while practising research, planning, reusable skills, and deliberate context
+management.
 
 ## Check Your Starting Point
 
 ```sh
 cd ../sample-app
-npm test
 ```
 
-The app built in Lab 01 should already be tested and `npm test` should pass.
-If it does not, finish that work before starting the waitlist feature. There
-is no intentional failing test or parallel bug-fix exercise in this lab.
+The starter is intentionally empty. You will build the app in this lab.
 
 ```text
 copilot
@@ -32,12 +29,14 @@ Note the token count before you start.
 
 ### 0. Divide work across three terminals
 
-Use three short-lived sessions instead of one long conversation:
+Use three short-lived sessions instead of one long conversation. Choose the
+model for each session in the CLI model picker. These are recommendations, not
+requirements: choose a different model if it better fits your needs.
 
 ```text
-Terminal 1: copilot, then /research
-Terminal 2: copilot, then /plan
-Terminal 3: copilot, then /fleet
+Terminal 1: copilot, select Sonnet 4.6, then /research
+Terminal 2: copilot, select Opus 4.6, then /plan
+Terminal 3: copilot, select Sonnet 4.6, then /implement
 ```
 
 Pass only the research summary to the plan session, then only the plan to the
@@ -47,9 +46,9 @@ implementation session. This keeps the context each session needs small.
 
 ```text
 /research
-Research the smallest way to add a waitlist to a dependency-free Node.js
-sports-class booking app. Cover a JSON data shape, capacity rules, API and UI
-behaviour, and tests for booking and waitlist transitions. Return a concise
+Research the smallest way to build a dependency-free Node.js sports-class
+booking app with a waitlist. Cover a JSON data shape, capacity rules, API and
+UI behaviour, and tests for booking and waitlist transitions. Return a concise
 implementation summary.
 ```
 
@@ -59,31 +58,28 @@ implementation summary.
 /plan
 Here is the research summary: <paste the summary only>
 
-Plan a waitlist feature for the sports-class app. A full class should let a
+Plan the sports-class app and its waitlist feature. A full class should let a
 user join the waitlist. The UI should show available places or waitlist status.
-Include validation, tests, and the exact files to change. Keep the plan small.
+Include validation, tests, and the exact files to create or change. Keep the
+plan small.
 ```
 
 Review the plan before asking Copilot to edit code.
 
-### 3. `/fleet` - parallelize independent work
+### 3. `/implement` - implement the approved plan
 
 ```text
-/fleet
 Here is the approved plan: <paste the plan only>
 
-Implement the waitlist feature in parallel workstreams: server/data changes,
-browser UI changes, and Node built-in regression tests. Keep the app
-dependency-free and preserve existing search and booking behaviour.
+Implement it now
 ```
 
 ### 4. Reuse generic skills
 
-Update the architecture document created in Lab 01 so it includes the
-waitlist:
+Update the architecture document so it includes the waitlist:
 
 ```text
-/architecture-sketch Update Architecture.md to include the waitlist feature.
+/architecture-sketch Update Architecture.md with the latest changes in sample_app/
 ```
 
 Then use the included review skill for the finished change:
@@ -93,12 +89,12 @@ Then use the included review skill for the finished change:
 missing regression tests.
 ```
 
-### 5. `/rubberduck` - catch mistakes while they are cheap
+### 5. `/rubber-duck` - catch mistakes while they are cheap
 
 ```text
-/rubberduck
-Here is my waitlist plan and diff. Look for overbooking, duplicate waitlist
-entries, unclear user feedback, and missing test cases.
+/rubber-duck
+Can a full class accidentally receive another booking? Explain the simplest
+check the app needs before it changes any booking data.
 ```
 
 ### 6. Manage context deliberately

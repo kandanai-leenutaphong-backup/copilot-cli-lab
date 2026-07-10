@@ -41,7 +41,7 @@ hands-on required.)
    - **Provide only relevant context** — smaller prompts, `/compact`,
      `/handoff`, and starting new sessions instead of letting one session's
      context grow unbounded (Day 3)
-   - **Divide and conquer** — `/research` → `/plan` → `/fleet` handoffs
+   - **Divide and conquer** — `/research` → `/plan` → `/implement` handoffs
      keep each stage's context small instead of one giant session paying
      for everything at once (Day 3)
    - Setting budgets/alerts where available
