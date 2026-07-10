@@ -32,14 +32,14 @@ There's a bug in how task ids are generated — in **both** the CLI
 (`src/index.js`) and the web app (`web-app/server.js`), by design, so the
 bug shows up no matter which interface you use. See `test/tasks.test.js` for
 a failing test that reproduces it. You'll meet this bug again in
-`lab-03-cost-saving-workflow`.
+`lab-02-cost-saving-workflow`.
 
 ## Project-level Copilot setup
 This repo already ships real Copilot CLI configuration — see
 `.github/copilot-instructions.md` and `.github/skills/` (`duplicate-task-checker`,
 `standup-recap`). Neither skill needs git — both work straight off the app's
 own `tasks.json`, which keeps this beginner-friendly. Explored in
-`lab-02-local-skills`.
+`lab-01-skills-and-instructions`.
 
 This app is the shared codebase for every lab in `copilot-cli-lab/`. Don't
 "fix" the id bug before you're told to — future labs depend on it being in

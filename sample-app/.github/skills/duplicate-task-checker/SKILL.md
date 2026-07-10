@@ -24,5 +24,5 @@ When reviewing or writing code in this repo that touches task ids:
    packages to solve this; solve it with plain JavaScript.
 
 This skill exists because of a real bug tracked in
-`test/tasks.test.js` — see `lab-03-cost-saving-workflow/README.md` for the
+`test/tasks.test.js` — see `lab-02-cost-saving-workflow/README.md` for the
 guided walkthrough of fixing it.

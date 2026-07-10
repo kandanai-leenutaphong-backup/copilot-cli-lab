@@ -37,13 +37,13 @@ hands-on required.)
    - Choosing appropriate plans/tiers for different roles
    - **Model choice** — default to Auto or a mid-tier model; reserve
      premium reasoning models for planning/debugging, not routine
-     implementation (Day 2 / Day 4)
+     implementation (Day 2 / Day 3)
    - **Provide only relevant context** — smaller prompts, `/compact`,
      `/handoff`, and starting new sessions instead of letting one session's
-     context grow unbounded (Day 4)
+     context grow unbounded (Day 3)
    - **Divide and conquer** — `/research` → `/plan` → `/fleet` handoffs
      keep each stage's context small instead of one giant session paying
-     for everything at once (Day 4)
+     for everything at once (Day 3)
    - Setting budgets/alerts where available
 
 5. **Checklist — run through with your team:**

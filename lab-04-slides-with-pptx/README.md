@@ -1,4 +1,4 @@
-# Day 6 — Show Off the Sprint
+# Day 5 — Show Off the Sprint
 
 *The demo's polished, the bug's fixed, the automations are humming. One
 teammate pipes up: "Can we get slides out of all this? Something to open the
@@ -28,7 +28,7 @@ straight from the repo's READMEs and commit history.
    ```
    > Build a short (6-8 slide), story-driven deck called "Team Mewpilot:
    > Demo Day" summarizing our sprint - pull the story beats from
-   > README.md and lab-00 through lab-06, and pull real highlights from
+   > README.md and lab-00 through lab-05, and pull real highlights from
    > `git log --oneline` in sample-app/. Keep text minimal and visual per
    > slide, like a real conference talk, not a text dump.
    ```
@@ -51,4 +51,4 @@ Award a prize for "most Team Mewpilot" slide.
 ## What's Next
 Bonus round: keeping all of this — chronicles, automations, and now
 slide decks — sustainable for the team's budget →
-[`lab-06-billing-budgeting`](../lab-06-billing-budgeting/README.md)
+[`lab-05-billing-budgeting`](../lab-05-billing-budgeting/README.md)

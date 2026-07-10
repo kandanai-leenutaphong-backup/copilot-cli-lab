@@ -1,6 +1,6 @@
 // Minimal smoke test for Team Mewpilot's task tracker.
 // Lab participants: this test currently FAILS - that's the bug you'll
-// hunt down together with Copilot CLI in lab-03 (example scenarios)!
+// hunt down together with Copilot CLI in lab-02 (example scenarios)!
 const assert = require('assert');
 const fs = require('fs');
 const path = require('path');

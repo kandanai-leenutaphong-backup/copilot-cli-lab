@@ -258,7 +258,7 @@ async function build() {
     beat: "Everyone was getting different answers. Time to set two lean house rules that apply on every project, on any laptop - and nothing more.",
     tryIt: "Install the template, then confirm every response ends with \"by mewpilot\".",
     iconKey: "globe",
-    notes: "Speaker note: keep global instructions VERY lean to optimize token usage - they are resent on every single turn, in every project, forever, so every extra line is a permanent, repeating cost. Two rules (commit convention + sign-off) is deliberately the whole file. Anything project-specific belongs in a local skill (lab-02) instead.",
+    notes: "Speaker note: keep global instructions VERY lean to optimize token usage - they are resent on every single turn, in every project, forever, so every extra line is a permanent, repeating cost. Two rules (commit convention + sign-off) is deliberately the whole file. Anything project-specific belongs in a local skill (lab-01) instead.",
   });
 
   await addDaySlide({

@@ -1,4 +1,4 @@
-# Day 4 — Working Smart, Not Expensive
+# Day 3 — Working Smart, Not Expensive
 
 *Demo's in two days, and the lead has an idea: "Judges love seeing priority
 front and center. Can we get color-coded priority badges into Mission
@@ -25,7 +25,7 @@ cd ../sample-app
 npm test        # or: node test/tasks.test.js
 ```
 You should see an `AssertionError` about duplicate task ids — still open
-from Day 3. Keep it in mind; it's a parallel workstream today, not the main
+from Day 2. Keep it in mind; it's a parallel workstream today, not the main
 event.
 
 ```
@@ -118,7 +118,7 @@ Cheaper to ask now.
 > is one of low/medium/high.
 ```
 💰 **Cost tip:** a skill you build once is context you never have to
-re-explain again. Compare this to Day 3's local skills, which already ship
+re-explain again. Compare this to Day 2's local skills, which already ship
 in this repo at `sample-app/.github/skills/` — `/create-skill` lets Team
 Mewpilot grow that same toolkit for the *new* feature they just shipped.
 
@@ -300,6 +300,6 @@ own bash-vs-grep/glob habits from this lab — were you reaching for `bash cat`
 or `find` anywhere you could have used `grep`/`glob` instead?
 
 ## What's Next
-Day 5: automate the boring stuff — including a daily cost-tip habit —
+Day 4: automate the boring stuff — including a daily cost-tip habit —
 so Team Mewpilot spends less time (and budget) on busywork →
-[`lab-04-daily-automations`](../lab-04-daily-automations/README.md)
+[`lab-03-daily-automations`](../lab-03-daily-automations/README.md)

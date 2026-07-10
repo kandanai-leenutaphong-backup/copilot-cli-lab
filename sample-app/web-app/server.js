@@ -73,7 +73,7 @@ const server = http.createServer(async (req, res) => {
     }
     const tasks = loadTasks();
     // NOTE: same id-generation logic (and same known bug!) as src/index.js -
-    // this is intentional, see lab-03-cost-saving-workflow.
+    // this is intentional, see lab-02-cost-saving-workflow.
     const id = tasks.length + 1;
     tasks.push({ id, text: text.trim(), done: false });
     saveTasks(tasks);

@@ -1,4 +1,4 @@
-# Day 5 — Automating the Busywork
+# Day 4 — Automating the Busywork
 
 *Demo's tomorrow. The team wants to spend today on polish, not chores. And
 the lead has one more ask: "Can Copilot just... tell us how much we're
@@ -78,7 +78,7 @@ this repo. This is the faster path for anything beyond the "one paragraph"
 example above: you're customizing a template, not authoring one.
 
 ### 5. Keep sessions lean while you set this up
-Reuse Day 4's habits here too:
+Reuse Day 3's habits here too:
 - `/new` when you start setting up the schedule (don't drag in yesterday's
   feature-build context).
 - `/compact` once you've iterated on the prompt wording a few times, then
@@ -93,7 +93,7 @@ back after a real week of data.
 ## What's Next
 Bonus round: with a daily cost check already flowing automatically, it's
 time to check the actual GitHub bill →
-[`lab-06-billing-budgeting`](../lab-06-billing-budgeting/README.md)
+[`lab-05-billing-budgeting`](../lab-05-billing-budgeting/README.md)
 
 *(Psst — want to show off the sprint itself? There's a bonus lab for that:
-[`lab-05-slides-with-pptx`](../lab-05-slides-with-pptx/README.md).)*
+[`lab-04-slides-with-pptx`](../lab-04-slides-with-pptx/README.md).)*

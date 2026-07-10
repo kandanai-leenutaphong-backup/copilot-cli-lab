@@ -64,4 +64,4 @@ first on this codebase?"* — see if its answer matches your instincts.
 ## What's Next
 Day 2: the team realizes everyone is asking Copilot slightly different
 questions and getting inconsistent answers. Time to set some ground rules →
-[`lab-01-global-instructions`](../lab-01-global-instructions/README.md)
+[`lab-01-skills-and-instructions`](../lab-01-skills-and-instructions/README.md)
