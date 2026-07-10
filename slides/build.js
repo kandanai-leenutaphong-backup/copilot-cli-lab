@@ -134,7 +134,7 @@ async function build() {
     });
     slide.addText(
       [
-        { text: "A half-finished task tracker.", options: { bullet: true, breakLine: true, paraSpaceAfter: 10 } },
+        { text: "An empty starter and a sports-class app idea.", options: { bullet: true, breakLine: true, paraSpaceAfter: 10 } },
         { text: "A demo on Friday.", options: { bullet: true, breakLine: true, paraSpaceAfter: 10 } },
         { text: "No idea GitHub Copilot CLI is about to become their most valuable teammate.", options: { bullet: true } },
       ],
@@ -265,7 +265,7 @@ async function build() {
     dayLabel: "LAB 02 · LOCAL",
     title: "Project-Local Skills",
     beat: "This codebase has its own quirks global rules don't cover - and real local skills are already set up. This lab is about exploring them.",
-    tryIt: "Ask Copilot to review the code and watch the pre-built duplicate-task-checker skill kick in.",
+    tryIt: "Build the sports-class app, then use a short generic review skill to check it.",
     iconKey: "folder",
   });
 
@@ -273,7 +273,7 @@ async function build() {
     dayLabel: "LAB 03 · COST-SAVING",
     title: "Working Smart, Not Expensive",
     beat: "A visible new feature, one lingering bug, six cost-saving habits, plus three tool-choice habits: grep/glob over bash, file refs not pastes, subagents for exploration.",
-    tryIt: "Ship color-coded priority badges, fix the duplicate task-id bug, then watch /context and /usage prove the savings.",
+    tryIt: "Ship the waitlist feature, then watch /context and /usage prove the savings.",
     iconKey: "coins",
   });
 

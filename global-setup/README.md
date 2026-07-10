@@ -44,9 +44,8 @@ global-setup/
   re-explain. Directly reused in `lab-02-cost-saving-workflow`.
 - **`create-copilot-skills`** — the meta-skill: a reference guide Copilot
   uses to scaffold *new* skills correctly (skill locations, `SKILL.md`
-  format, frontmatter fields). This is exactly how `duplicate-task-checker`
-  and `standup-recap` in `sample-app/.github/skills/` were built —
-  install it so your team can build their own local skills the same way.
+  format, frontmatter fields). It supports the simple, reusable project-local
+  skills created in Lab 01.
 
 ## Keep Global Instructions Lean
 

@@ -1,10 +1,7 @@
-# Project instructions for mewpilot-tasks
+# Project instructions for Team Mewpilot Sports
 
-- Task ids must always be unique — flag any code that could generate
-  duplicates (see the `duplicate-task-checker` skill in `.github/skills/`).
-- This is a zero-dependency Node.js project — do not suggest adding npm
-  packages to `sample-app/` itself. (The `slides/` and `web-app/` tooling
-  folders are exempt — they have their own package.json.)
-- Tests live in `test/` and use Node's built-in `assert` module.
-- Keep the CLI (`src/`) and the web UI (`web-app/`, if present) reading and
-  writing the same `tasks.json` file so they stay in sync.
+- This is a zero-dependency Node.js project. Do not add npm packages to
+  `sample-app/`.
+- Validate all client input before storing it or changing a booking.
+- Keep class capacity and booked-place counts consistent.
+- Use Node's built-in test tools for tests.

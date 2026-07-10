@@ -8,7 +8,12 @@ Install, authenticate, and run GitHub Copilot CLI for the first time.
 
 ## Steps
 
-1. **Install the CLI** (skip if already installed):
+1. **Update and verify the CLI.** Start every workshop session with:
+   ```
+   sudo copilot update
+   copilot --version
+   ```
+   If `copilot` is not installed yet, install it first:
    ```
    npm install -g @githubnext/github-copilot-cli
    # or follow the latest instructions at:
@@ -22,14 +27,16 @@ Install, authenticate, and run GitHub Copilot CLI for the first time.
    On first run you'll be prompted to sign in with your GitHub account. Follow
    the device-code flow in your browser.
 
-3. **Verify it works** — from inside `sample-app/`, start the CLI and ask it a
-   simple question about the codebase:
+3. **Verify it works** — from inside the empty `sample-app/` starter, start the
+   CLI and ask it a simple planning question:
    ```
    cd ../sample-app
    copilot
-   > What does this project do?
+   > I want to build a small sports-class search and booking app here. What
+   > would be a sensible dependency-free Node.js starting point?
    ```
-   Copilot should read the files and summarize `mewpilot-tasks`.
+   Copilot should recognize that the folder is intentionally empty and suggest
+   a small, practical starting point.
 
 4. **Check your model.** Run `/model` and confirm you're on **Auto**. Auto
    mode picks the right model for the task automatically — a good, lazy
@@ -41,21 +48,15 @@ Install, authenticate, and run GitHub Copilot CLI for the first time.
    > (leave on auto for today)
    ```
 
-5. **Try your first real prompt** — ask it to run the tests:
+5. **Try your first real prompt** — ask it to inspect the starter:
    ```
-   > Run the test suite and tell me what happens
+   > Inspect this starter and list the first files we should create for the
+   > sports-class app. Do not write code yet.
    ```
-   Notice anything? (Hint: keep this failing test in mind — Team Mewpilot will
-   come back to it in Day 4.)
 
-6. **See the whole app, not just the code** — fire up the web UI:
-   ```
-   node web-app/server.js
-   ```
-   Open http://localhost:4173 in your browser. This is the same
-   `mewpilot-tasks` app, with a small web front end on top — add a task in
-   the browser, then run `node src/index.js list` in a terminal and watch
-   it show up there too.
+6. **Save the build for the next lab.** Lab 01 uses skills to generate the
+   first working version of the app. Keeping this folder empty now makes that
+   build exercise easy to see and reason about.
 
 ## 🎉 Try It: Fun Checkpoint
 Ask Copilot CLI: *"If you were a member of Team Mewpilot, what would you do

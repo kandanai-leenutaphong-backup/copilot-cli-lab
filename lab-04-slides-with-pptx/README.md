@@ -35,8 +35,8 @@ straight from the repo's READMEs and commit history.
 
 3. **Iterate like a real deck review.** Ask Copilot to:
    - Swap in a different color palette that fits "scrappy startup team".
-   - Add a slide with a screenshot of the `web-app/` UI from Day 1
-     (`node web-app/server.js`, then a screenshot of http://localhost:4173).
+   - Add a slide with a screenshot of the sports-class app UI from Lab 01
+     (`npm run web`, then a screenshot of the local URL).
    - Tighten any slide that feels text-heavy.
 
 4. **Compare with the original deck.** Open `../slides/copilot-cli-lab.pptx`

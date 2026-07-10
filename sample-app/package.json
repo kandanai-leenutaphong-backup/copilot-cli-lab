@@ -1,15 +1,9 @@
 {
-  "name": "mewpilot-tasks",
+  "name": "mewpilot-sports",
   "version": "0.1.0",
-  "description": "Team Mewpilot's scrappy little task tracker CLI - the shared codebase for the Copilot CLI hands-on lab.",
-  "main": "src/index.js",
-  "bin": {
-    "mewpilot-tasks": "src/index.js"
-  },
+  "description": "Empty starter for Team Mewpilot's sports-class search and booking app.",
   "scripts": {
-    "start": "node src/index.js",
-    "web": "node web-app/server.js",
-    "test": "node test/tasks.test.js"
+    "test": "node --test"
   },
   "license": "MIT"
 }

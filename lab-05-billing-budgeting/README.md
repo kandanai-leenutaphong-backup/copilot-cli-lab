@@ -57,7 +57,7 @@ As a team, guess your org's Copilot spend for the month before looking it up.
 Closest guess wins bragging rights.
 
 ## Wrap-Up
-That's the full sprint! Team Mewpilot went from a rough task tracker (and a
-small web app) to a demo-ready product, powered by GitHub Copilot CLI's
+That's the full sprint! Team Mewpilot went from an empty starter to a
+demo-ready sports-class booking app, powered by GitHub Copilot CLI's
 setup, global & local skills, cost-saving workflows, daily automations, and
 even its own slide deck — all while keeping an eye on cost. 🎉
